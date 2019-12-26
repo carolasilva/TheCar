@@ -10,7 +10,7 @@ import java.util.Objects;
 public class Disponibilidade {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
+  private Long id;
   private LocalDate dataInicio;
   private LocalDate dataFim;
   private Double valorDaDiaria;
@@ -23,7 +23,7 @@ public class Disponibilidade {
   public Disponibilidade() {
   }
 
-  public Disponibilidade(Integer id, LocalDate dataInicio, LocalDate dataFim, Double valorDaDiaria, Veiculo veiculo) {
+  public Disponibilidade(Long id, LocalDate dataInicio, LocalDate dataFim, Double valorDaDiaria, Veiculo veiculo) {
     this.id = id;
     this.dataInicio = dataInicio;
     this.dataFim = dataFim;
@@ -31,11 +31,11 @@ public class Disponibilidade {
     this.veiculo = veiculo;
   }
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

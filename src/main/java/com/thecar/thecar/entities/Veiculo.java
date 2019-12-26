@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Veiculo implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
+  private Long id;
   private String placa;
   private String chassi;
   private Integer numeroDePortas;
@@ -30,7 +30,7 @@ public class Veiculo implements Serializable {
   public Veiculo() {
   }
 
-  public Veiculo(Integer id, String placa, String chassi, Integer numeroDePortas, Long quilometragem, String marca, String modelo, int ano, Cor cor, Combustivel combustivel) {
+  public Veiculo(Long id, String placa, String chassi, Integer numeroDePortas, Long quilometragem, String marca, String modelo, int ano, Cor cor, Combustivel combustivel) {
     this.id = id;
     this.placa = placa;
     this.chassi = chassi;
@@ -43,11 +43,11 @@ public class Veiculo implements Serializable {
     this.combustivel = combustivel;
   }
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

@@ -27,7 +27,7 @@ public class VeiculoResource {
   }
 
   @GetMapping(value = "{id}")
-  public ResponseEntity<Veiculo> buscar(@PathVariable Integer id) {
+  public ResponseEntity<Veiculo> buscar(@PathVariable Long id) {
     Veiculo veiculo = veiculoService.buscar(id);
     return ResponseEntity.ok().body(veiculo);
   }

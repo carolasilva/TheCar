@@ -17,7 +17,7 @@ public class VeiculoService {
     return veiculoRepository.findAll();
   }
 
-  public Veiculo buscar(Integer id) {
+  public Veiculo buscar(Long id) {
     Optional<Veiculo> obj = veiculoRepository.findById(id);
     return obj.get();
   }
