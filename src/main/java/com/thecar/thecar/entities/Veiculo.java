@@ -3,11 +3,10 @@ package com.thecar.thecar.entities;
 import com.thecar.thecar.entities.enums.Combustivel;
 import com.thecar.thecar.entities.enums.Cor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -24,6 +23,9 @@ public class Veiculo implements Serializable {
   private int ano;
   private Cor cor;
   private Combustivel combustivel;
+
+  @OneToMany(mappedBy = "veiculo")
+  private List<Disponibilidade> disponibilidades = new ArrayList<>();
 
   public Veiculo() {
   }
@@ -119,6 +121,14 @@ public class Veiculo implements Serializable {
 
   public void setAno(int ano) {
     this.ano = ano;
+  }
+
+  public List<Disponibilidade> getDisponibilidades() {
+    return disponibilidades;
+  }
+
+  public void setDisponibilidades(List<Disponibilidade> disponibilidades) {
+    this.disponibilidades = disponibilidades;
   }
 
   @Override
