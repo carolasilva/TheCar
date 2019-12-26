@@ -19,6 +19,32 @@ public class VeiculoService {
 
   public Veiculo buscar(Long id) {
     Optional<Veiculo> obj = veiculoRepository.findById(id);
-    return obj.get();
+    return obj.get(); //TODO tratamento de exceção
+  }
+
+  public Veiculo inserir(Veiculo veiculo) {
+    return veiculoRepository.save(veiculo);
+  }
+
+  public void deletar(Long id) {
+    veiculoRepository.deleteById(id); //TODO tratamento de exceção
+  }
+
+  public Veiculo atualizar (Long id, Veiculo veiculo) {
+    Veiculo entity = veiculoRepository.getOne(id);
+    atualizarVeiculo(entity, veiculo);
+    return veiculoRepository.save(entity);
+  }
+
+  private void atualizarVeiculo(Veiculo entity, Veiculo veiculo) {
+    entity.setAno(veiculo.getAno());
+    entity.setChassi(veiculo.getChassi());
+    entity.setCombustivel(veiculo.getCombustivel());
+    entity.setCor(veiculo.getCor());
+    entity.setMarca(veiculo.getMarca());
+    entity.setModelo(veiculo.getModelo());
+    entity.setNumeroDePortas(veiculo.getNumeroDePortas());
+    entity.setPlaca(veiculo.getPlaca());
+    entity.setQuilometragem(veiculo.getQuilometragem());
   }
 }
