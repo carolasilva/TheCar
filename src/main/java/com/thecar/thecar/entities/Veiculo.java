@@ -3,10 +3,17 @@ package com.thecar.thecar.entities;
 import com.thecar.thecar.entities.enums.Combustivel;
 import com.thecar.thecar.entities.enums.Cor;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
 public class Veiculo implements Serializable {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   private String placa;
   private String chassi;
